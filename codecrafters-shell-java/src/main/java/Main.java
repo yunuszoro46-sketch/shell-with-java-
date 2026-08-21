@@ -12,17 +12,27 @@ public class Main {
             if (!scanner.hasNextLine()) {
                 break;
             }
-
-           
-            
+   
             String input = scanner.nextLine();
-        
-        if(input.equals("exit")) {
-        	break;
-        }
+  
+            if (input.equals("exit 0") || input.equals("exit")) {
+                break;
+            } 
     
-        System.out.println(input + ": command not found");
+            else if (input.startsWith("echo ")) {
+                System.out.println(input.substring(5));
+            } 
+            else if (input.equals("echo")) {
+                System.out.println();
+            } 
+        
+            else {
+                System.out.println(input + ": command not found");
+            }
         }
+        
+            
+            
+            
         scanner.close();
     }
-}
